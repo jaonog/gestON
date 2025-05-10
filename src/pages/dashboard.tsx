@@ -1,10 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Chamados from "../components/Chamados";
+import { useRouter } from "next/router";
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState<"chamados" | "equipamentos" | "clientes">("chamados");
+  const router = useRouter();
+
+  useEffect(() => {
+    
+    const isAuthenticated = localStorage.getItem("logado");
+
+    if (!isAuthenticated) {
+
+      router.push("/login");
+    }
+  }, [router]);
 
   return (
     <div className="flex min-h-screen bg-[#0A0A0A] text-white">
@@ -43,15 +55,15 @@ export default function Dashboard() {
         </div>
 
         <footer className="text-xs text-zinc-400">Bem-vindo USER
-        <button
-        onClick={() => {
-        localStorage.removeItem("logado");
-        window.location.href = "/login";
-        }}
-    className="text-red-400 hover:text-red-200 text-sm pl-15 "
-  >
-    Sair
-  </button>
+          <button
+            onClick={() => {
+              localStorage.removeItem("logado");
+              window.location.href = "/login"; 
+            }}
+            className="text-red-400 hover:text-red-200 text-sm pl-15 "
+          >
+            Sair
+          </button>
         </footer>
       </aside>
 
