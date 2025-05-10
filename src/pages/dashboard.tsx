@@ -42,7 +42,17 @@ export default function Dashboard() {
           </nav>
         </div>
 
-        <footer className="text-xs text-zinc-400">Bem-vindo USER</footer>
+        <footer className="text-xs text-zinc-400">Bem-vindo USER
+        <button
+        onClick={() => {
+        localStorage.removeItem("logado");
+        window.location.href = "/login";
+        }}
+    className="text-red-400 hover:text-red-200 text-sm pl-15 "
+  >
+    Sair
+  </button>
+        </footer>
       </aside>
 
       <main className="flex-1 p-10">
