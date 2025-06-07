@@ -57,11 +57,13 @@ O uso de JSX e Tailwind permite descrever diretamente o que a interface deve exi
 
 ## 🛠️ Como Executar Localmente
 
+- Baixe o projeto e extraia na pasta do usuário principal da máquina, em seguida abra o projeto.
+
 - Instale as dependências  
 npm install
 
-- Crie o arquivo .env.local. As variáveis corretas estarão dentro do arquivo "arquivoEnvConfig.txt" no diretório principal.  
-Apenas copie os dados do arquivo txt e cole no .env.local
+- Crie o arquivo .env. As variáveis corretas estarão dentro do arquivo "arquivoEnvConfig.txt" no diretório principal.  
+Apenas copie os dados do arquivo txt e cole no .env
 
 - Gere o cliente Prisma (para garantir que o Prisma esteja sincronizado com o banco)  
 npx prisma generate
