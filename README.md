@@ -71,20 +71,20 @@ gest-on/
 
 ## 🛠️ Como executar localmente
 
-# -Instale as dependências 
+## -Instale as dependências 
 npm install
 
-# -Crie o arquivo .env.local, as variáveis corretas estarão dentro do arquivo.txt "arquivoEnvConfig.txt" no diretorio principal.
+## -Crie o arquivo .env.local, as variáveis corretas estarão dentro do arquivo.txt "arquivoEnvConfig.txt" no diretorio principal.
 apenas copie os dados do arquivo txt e cole no .env.local
 
-# - Gere o cliente Prisma (para garantir que o Prisma esteja sincronizado com o banco)
+## - Gere o cliente Prisma (para garantir que o Prisma esteja sincronizado com o banco)
 npx prisma generate
 
-# -Aplique o schema no banco (caso tenha alterações no Prisma schema)
+## -Aplique o schema no banco (caso tenha alterações no Prisma schema)
 npx prisma db push
 
-# -Inicie o servidor
+## -Inicie o servidor
 npm run dev
 
-# -Abra o navegador e acesse
+## -Abra o navegador e acesse
 http://localhost:3000
