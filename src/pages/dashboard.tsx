@@ -1,27 +1,5 @@
 "use client";
 
-<<<<<<< HEAD
-import { useState, useEffect } from "react";
-import Chamados from "../components/Chamados";
-import { useRouter } from "next/router";
-
-export default function Dashboard() {
-  const [activeTab, setActiveTab] = useState<"chamados" | "equipamentos" | "clientes">("chamados");
-  const router = useRouter();
-
-  useEffect(() => {
-    
-    const isAuthenticated = localStorage.getItem("logado");
-
-    if (!isAuthenticated) {
-
-      router.push("/login");
-    }
-  }, [router]);
-
-  return (
-    <div className="flex min-h-screen bg-[#0A0A0A] text-white">
-=======
 import { useEffect, useState, lazy, Suspense } from "react";
 import { useRouter } from "next/navigation";
 import {
@@ -74,12 +52,7 @@ useEffect(() => {
 
   return (
     <div className="flex min-h-screen bg-[#0A0A0A] text-white">
-<<<<<<< HEAD
-      {/* Sidebar */}
->>>>>>> 18c7c88 (Mudanças finais)
-=======
     
->>>>>>> 046dbfe (Salvando mudançasl)
       <aside className="w-64 bg-neutral-900 p-6 flex flex-col justify-between">
         <div>
           <h1 className="text-2xl font-bold mb-10">
@@ -88,43 +61,6 @@ useEffect(() => {
 
           <nav className="flex flex-col gap-4">
             <button
-<<<<<<< HEAD
-              onClick={() => setActiveTab("chamados")}
-              className={`text-left px-4 py-2 rounded hover:bg-sky-800 ${
-                activeTab === "chamados" ? "bg-sky-800 font-semibold" : ""
-              }`}
-            >
-              Chamados
-            </button>
-            <button
-              onClick={() => setActiveTab("equipamentos")}
-              className={`text-left px-4 py-2 rounded hover:bg-sky-800 ${
-                activeTab === "equipamentos" ? "bg-sky-800 font-semibold" : ""
-              }`}
-            >
-              Equipamentos
-            </button>
-            <button
-              onClick={() => setActiveTab("clientes")}
-              className={`text-left px-4 py-2 rounded hover:bg-sky-800 ${
-                activeTab === "clientes" ? "bg-sky-800 font-semibold" : ""
-              }`}
-            >
-              Clientes
-            </button>
-          </nav>
-        </div>
-
-        <footer className="text-xs text-zinc-400">Bem-vindo USER
-          <button
-            onClick={() => {
-              localStorage.removeItem("logado");
-              window.location.href = "/login"; 
-            }}
-            className="text-red-400 hover:text-red-200 text-sm pl-15 "
-          >
-            Sair
-=======
               onClick={() => setActiveTab("home")}
               className={`flex items-center gap-2 px-4 py-2 rounded hover:bg-sky-800 transition-all ${
                 activeTab === "home" ? "bg-skZy-800 font-semibold" : ""
@@ -203,31 +139,10 @@ useEffect(() => {
             className="flex items-center gap-1 text-red-400 hover:text-red-200 text-sm pt-2"
           >
             <LogOut size={16} /> Sair
->>>>>>> 18c7c88 (Mudanças finais)
           </button>
         </footer>
       </aside>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <main className="flex-1 p-10">
-        {activeTab === "chamados" && <Chamados />}
-        {activeTab === "equipamentos" && (
-          <div>
-            <h2 className="text-3xl font-bold mb-6">Equipamentos</h2>
-            <p>Conteúdo de equipamentos aqui...</p>
-          </div>
-        )}
-        {activeTab === "clientes" && (
-          <div>
-            <h2 className="text-3xl font-bold mb-6">Clientes</h2>
-            <p>Conteúdo de clientes aqui...</p>
-          </div>
-        )}
-=======
-      {/* Conteúdo principal */}
-=======
->>>>>>> 046dbfe (Salvando mudançasl)
       <main className="flex-1">
         <Suspense fallback={<div className="p-4">Carregando conteúdo...</div>}>
           {activeTab === "home" && <HomePage />}
@@ -237,7 +152,6 @@ useEffect(() => {
           {activeTab === "relatorios" && <Relatorios />}
           {activeTab === "usuarios" && isAdmin && <GerenciarUsuarios />}
         </Suspense>
->>>>>>> 18c7c88 (Mudanças finais)
       </main>
     </div>
   );
