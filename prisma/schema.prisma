@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Cliente {
+  id           Int            @id @default(autoincrement())
+  nome         String
+  cpfCnpj      String
+  telefone     String
+  email        String
+  endereco     String
+  equipamentos Equipamento[]
+  chamados     Chamado[]
+}
+
+model Equipamento {
+  id             Int            @id @default(autoincrement())
+  nome           String
+  tipo           String
+  modelo         String
+  clienteId      Int
+  cliente        Cliente        @relation(fields: [clienteId], references: [id])
+  chamadoItens   ChamadoItem[]  // ← relação inversa com ChamadoItem
+}
+
+model Chamado {
+  id          Int           @id @default(autoincrement())
+  clienteId   Int
+  cliente     Cliente       @relation(fields: [clienteId], references: [id])
+  tecnico     String
+  status      String
+  data        DateTime      @default(now())
+  itens       ChamadoItem[] // ← relação com os equipamentos usados no chamado
+}
+
+model ChamadoItem {
+  id             Int         @id @default(autoincrement())
+  chamadoId      Int
+  equipamentoId  Int
+  problema       String
+  solucao        String
+  chamado        Chamado     @relation(fields: [chamadoId], references: [id])
+  equipamento    Equipamento @relation(fields: [equipamentoId], references: [id])
+}
+
+model Usuario {
+  id    BigInt   @id
+  senha String
+  tipo  String?
+
+  @@map("Usuarios") // continua mapeando a tabela correta
+}
+

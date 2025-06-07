@@ -7,7 +7,11 @@ Este projeto foi desenvolvido com o objetivo de automatizar e facilitar o gerenc
 -Paradigmas utilizados-
 -Programação Orientada a Componentes (POC)
 Utilizada para construir interfaces reutilizáveis com React e Next.js.
+<<<<<<< HEAD
 Cada funcionalidade da UI é isolada em componentes, facilitando manutenção e testes.
+=======
+
+>>>>>>> 18c7c88 (Mudanças finais)
 
 -Programação Declarativa
 Aplicada no uso de JSX e CSS Utility-First com Tailwind, priorizando clareza e legibilidade do que a interface deve ser.
