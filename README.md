@@ -54,20 +54,6 @@ O uso de JSX e Tailwind permite descrever diretamente o que a interface deve exi
 ![Dashboard](./public/dashboard.png)
 
 ---
-## 📁 Estrutura de Pastas (resumida)
-
-gest-on/
-├── prisma/                  → Schema do banco (Prisma)
-├── public/                  → Assets estáticos
-├── src/
-│   ├── pages/               → Páginas da aplicação (Next.js)
-│   ├── components/          → Componentes reutilizáveis
-│   ├── lib/                 → Integração com Supabase e Prisma
-│   ├── styles/              → Arquivos de estilo global
-│   └── types/               → Tipagens globais TypeScript
-├── .env.local               → Variáveis de ambiente
-├── package.json
-└── README.md
 
 ## 🛠️ Como executar localmente
 
