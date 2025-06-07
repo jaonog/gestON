@@ -74,8 +74,12 @@ useEffect(() => {
 
   return (
     <div className="flex min-h-screen bg-[#0A0A0A] text-white">
+<<<<<<< HEAD
       {/* Sidebar */}
 >>>>>>> 18c7c88 (Mudanças finais)
+=======
+    
+>>>>>>> 046dbfe (Salvando mudançasl)
       <aside className="w-64 bg-neutral-900 p-6 flex flex-col justify-between">
         <div>
           <h1 className="text-2xl font-bold mb-10">
@@ -140,7 +144,6 @@ useEffect(() => {
               Chamados
             </button>
 
-            {/* Equipamentos - SOMENTE se NÃO for atendente */}
             {!isAtendente && (
               <button
                 onClick={() => setActiveTab("equipamentos")}
@@ -173,7 +176,6 @@ useEffect(() => {
               Relatórios
             </button>
 
-            {/* Gerenciar Usuários - SOMENTE para admin */}
             {isAdmin && (
               <button
                 onClick={() => setActiveTab("usuarios")}
@@ -207,6 +209,7 @@ useEffect(() => {
       </aside>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       <main className="flex-1 p-10">
         {activeTab === "chamados" && <Chamados />}
         {activeTab === "equipamentos" && (
@@ -223,6 +226,8 @@ useEffect(() => {
         )}
 =======
       {/* Conteúdo principal */}
+=======
+>>>>>>> 046dbfe (Salvando mudançasl)
       <main className="flex-1">
         <Suspense fallback={<div className="p-4">Carregando conteúdo...</div>}>
           {activeTab === "home" && <HomePage />}

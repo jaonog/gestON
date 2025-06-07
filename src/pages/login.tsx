@@ -10,9 +10,17 @@ export default function Login() {
   const [erro, setErro] = useState("");
   const router = useRouter();
 
+<<<<<<< HEAD
   useEffect(() => {
     if (localStorage.getItem("logado") === "true") {
       router.push("/dashboard");
+=======
+  const handleLogin = async () => {
+    setErro("");
+    if (!identificador || !senha) {
+      setErro("Preencha identificador e senha.");
+      return;
+>>>>>>> 046dbfe (Salvando mudançasl)
     }
   }, []);
 
