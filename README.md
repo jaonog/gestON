@@ -62,7 +62,7 @@ O uso de JSX e Tailwind permite descrever diretamente o que a interface deve exi
 - Instale as dependências  
 npm install
 
-- Crie o arquivo .env. As variáveis corretas estarão dentro do arquivo "arquivoEnvConfig.txt" no diretório principal.  
+- Crie o arquivo .env, as variáveis corretas estarão dentro do arquivo "arquivoEnvConfig.txt" no diretório principal.  
 Apenas copie os dados do arquivo txt e cole no .env
 
 - Gere o cliente Prisma (para garantir que o Prisma esteja sincronizado com o banco)  
