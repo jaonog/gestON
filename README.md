@@ -54,15 +54,37 @@ O uso de JSX e Tailwind permite descrever diretamente o que a interface deve exi
 ![Dashboard](./public/dashboard.png)
 
 ---
+## 📁 Estrutura de Pastas (resumida)
+
+gest-on/
+├── prisma/                  → Schema do banco (Prisma)
+├── public/                  → Assets estáticos
+├── src/
+│   ├── pages/               → Páginas da aplicação (Next.js)
+│   ├── components/          → Componentes reutilizáveis
+│   ├── lib/                 → Integração com Supabase e Prisma
+│   ├── styles/              → Arquivos de estilo global
+│   └── types/               → Tipagens globais TypeScript
+├── .env.local               → Variáveis de ambiente
+├── package.json
+└── README.md
 
 ## 🛠️ Como executar localmente
 
--Instale as dependências 
+# -Instale as dependências 
 npm install
 
--Configure as variáveis de ambiente no arquivo .env.local:
-NEXT_PUBLIC_SUPABASE_URL=...
-NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+# -Crie o arquivo .env.local, as variáveis corretas estarão dentro do arquivo.txt "arquivoEnvConfig.txt" no diretorio principal.
+apenas copie os dados do arquivo txt e cole no .env.local
 
--Inicie o servidor
+# - Gere o cliente Prisma (para garantir que o Prisma esteja sincronizado com o banco)
+npx prisma generate
+
+# -Aplique o schema no banco (caso tenha alterações no Prisma schema)
+npx prisma db push
+
+# -Inicie o servidor
 npm run dev
+
+# -Abra o navegador e acesse
+http://localhost:3000

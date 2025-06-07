@@ -1,0 +1,4 @@
+DATABASE_URL="postgresql://postgres.ailcohjdwzzkidgmhitr:projetogeston@aws-0-sa-east-1.pooler.supabase.com:5432/postgres"
+
+NEXT_PUBLIC_SUPABASE_URL=https://ailcohjdwzzkidgmhitr.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFpbGNvaGpkd3p6a2lkZ21oaXRyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkyOTY0MTMsImV4cCI6MjA2NDg3MjQxM30.AtoVxZxUvTbf-Q_yky6XAIJBwCheHjQ4D6qH_b-kHxM
