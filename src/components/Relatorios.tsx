@@ -10,7 +10,7 @@ type Chamado = {
   cliente: { nome: string };
   tecnico: string;
   status: string;
-  data: string; 
+  data: string; // ISO
   itens: {
     equipamento: { nome: string };
     problema: string;
@@ -80,7 +80,7 @@ export default function Relatorios() {
       body: rows,
       startY: 40,
       styles: { fontSize: 8 },
-      headStyles: { fillColor: [0, 104, 168]},
+      headStyles: { fillColor: [15, 118, 255] },
     });
 
     doc.save("relatorio-chamados.pdf");

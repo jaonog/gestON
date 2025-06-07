@@ -4,24 +4,9 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Bar, Pie } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  ArcElement,
-  Tooltip,
-  Legend,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-} from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement } from "chart.js";
 
-ChartJS.register(
-  ArcElement,
-  Tooltip,
-  Legend,
-  CategoryScale,
-  LinearScale,
-  BarElement
-);
+ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
 
 interface Chamado {
   id: number;
@@ -34,27 +19,21 @@ export default function Relatorios() {
 
   useEffect(() => {
     fetch("/api/chamados")
-      .then((res) => res.json())
-      .then((data) => setChamados(data));
+      .then(res => res.json())
+      .then(data => setChamados(data));
   }, []);
 
   const total = chamados.length;
 
-  const porStatus = chamados.reduce(
-    (acc: Record<string, number>, chamado) => {
-      acc[chamado.status] = (acc[chamado.status] || 0) + 1;
-      return acc;
-    },
-    {}
-  );
+  const porStatus = chamados.reduce((acc: Record<string, number>, chamado) => {
+    acc[chamado.status] = (acc[chamado.status] || 0) + 1;
+    return acc;
+  }, {});
 
-  const porTecnico = chamados.reduce(
-    (acc: Record<string, number>, chamado) => {
-      acc[chamado.tecnico] = (acc[chamado.tecnico] || 0) + 1;
-      return acc;
-    },
-    {}
-  );
+  const porTecnico = chamados.reduce((acc: Record<string, number>, chamado) => {
+    acc[chamado.tecnico] = (acc[chamado.tecnico] || 0) + 1;
+    return acc;
+  }, {});
 
   const statusData = {
     labels: Object.keys(porStatus),
@@ -80,9 +59,7 @@ export default function Relatorios() {
 
   return (
     <div className="p-6 space-y-6">
-      <div className="bg-sky-400 p-4 rounded-md shadow text-white">
-        <h1 className="text-2xl font-bold">Relatórios</h1>
-      </div>
+      <h1 className="text-2xl font-bold">Relatórios</h1>
 
       <Card>
         <CardContent className="p-4">
