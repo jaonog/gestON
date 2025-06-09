@@ -53,6 +53,6 @@ model Usuario {
   senha String
   tipo  String?
 
-  @@map("Usuarios") // continua mapeando a tabela correta
+  @@map("Usuarios") 
 }
 

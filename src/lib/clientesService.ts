@@ -15,7 +15,7 @@ export async function criarCliente(cliente: any) {
 }
 
 export async function atualizarCliente(cliente: any) {
-  // Garantir que id seja número e enviar só os campos permitidos
+ 
   const corpo = {
     id: Number(cliente.id),
     nome: cliente.nome,
