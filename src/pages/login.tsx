@@ -29,7 +29,7 @@ export default function Login() {
     }
 
     const { data: usuario, error } = await supabase
-      .from("Usuarios") // IMPORTANTE: aspas duplas dentro da string!
+      .from("Usuarios") 
       .select("*")
       .eq("id", idNumerico)
       .limit(1)
