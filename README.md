@@ -77,5 +77,7 @@ npm run dev
 - Abra o navegador e acesse  
 http://localhost:3000
 
-- Faça o login padrão
-O identificador será "1" e a senha padrão será "123"
+- Faça o login padrão:
+  - Identificador: `1`
+  - Senha: `123`
+
